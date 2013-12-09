@@ -1,4 +1,4 @@
-class KmResque
+class KmSidekiq
   class Configuration
     attr_accessor :key
 

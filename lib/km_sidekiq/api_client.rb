@@ -1,6 +1,6 @@
-require 'km_resque'
+require 'km_sidekiq'
 
-class KmResque
+class KmSidekiq
   class ApiClient
     def alias(identifier1, identifier2, timestamp)
       hit('a', { '_n' => identifier2,
@@ -23,15 +23,15 @@ class KmResque
     end
 
     def api_key
-      @api_key ||= KmResque.configuration.key
+      @api_key ||= KmSidekiq.configuration.key
     end
 
     def host
-      @host ||= KmResque.configuration.host
+      @host ||= KmSidekiq.configuration.host
     end
 
     def port
-      @port ||= KmResque.configuration.port
+      @port ||= KmSidekiq.configuration.port
     end
 
   private
