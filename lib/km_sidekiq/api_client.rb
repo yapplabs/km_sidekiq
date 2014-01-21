@@ -55,7 +55,7 @@ class KmSidekiq
         data['_t'] = Time.now.to_i
       end
 
-      unsafe = Regexp.new("[^#{URI::REGEXP::PATTERN::UNRESERVED}]", false, 'N')
+      unsafe = Regexp.new("[^#{URI::REGEXP::PATTERN::UNRESERVED}]", false)
 
       query_parts = []
       query = ''
